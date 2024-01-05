@@ -1,0 +1,26 @@
+* {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wraper {
+  display: flex;
+}
+
+.left_menu {
+  min-width: 306px;
+}
+
+.right_menu {
+  background: #fafbff;
+  padding-left: 71px;
+  padding-right: 95px;
+}
