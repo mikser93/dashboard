@@ -1,29 +1,42 @@
-// import Box from "@mui/material/Box";
-// import TextField from "@mui/material/TextField";
-// import { SearchIcon } from "../Icons/icons";
-
-// export default function Search() {
-//   return (
-//     <Box
-//       component="form"
-//       sx={{
-//         "& > :not(style)": { m: 1, width: "25ch" },
-//       }}
-//       noValidate
-//       autoComplete="off"
-//     >
-//       <TextField id="outlined-basic" label="Search" variant="outlined" />
-//     </Box>
-//   );
-// }
-
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { SearchIcon } from "../Icons/icons";
+import { rows } from "../../database/customerDatabase";
 
-export default function Search() {
+export default function Search({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleChange = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    onSearch(
+      rows.filter((row) =>
+        Object.values(row).some(
+          (value) =>
+            typeof value === "string" &&
+            value.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+    );
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      onSearch(
+        rows.filter((row) =>
+          Object.values(row).some(
+            (value) =>
+              typeof value === "string" &&
+              value.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+        )
+      );
+    }
+  };
+
   return (
     <Box
       component="form"
@@ -34,8 +47,8 @@ export default function Search() {
       autoComplete="off"
     >
       <TextField
-        id="outlined-basic"
         variant="outlined"
+        type="search"
         placeholder="Search"
         InputProps={{
           startAdornment: (
@@ -63,6 +76,9 @@ export default function Search() {
             height: "38px",
           },
         }}
+        value={searchTerm}
+        onChange={handleChange}
+        onKeyPress={handleKeyPress}
       />
     </Box>
   );

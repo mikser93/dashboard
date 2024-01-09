@@ -1,5 +1,5 @@
 * {
-  font-family: "Poppins";
+  font-family: Poppins, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,10 +13,6 @@ body {
 
 .wraper {
   display: flex;
-}
-
-.left_menu {
-  min-width: 306px;
 }
 
 .right_menu {

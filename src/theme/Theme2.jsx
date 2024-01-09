@@ -66,7 +66,7 @@ export const Theme = createTheme({
             width: "208px",
           },
           "& th:nth-of-type(5)": {
-            width: "140px",
+            width: "148px",
           },
           "& th:nth-of-type(6)": {
             width: "130px",
