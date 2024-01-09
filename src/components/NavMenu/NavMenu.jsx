@@ -1,5 +1,3 @@
-// import { Link as RouterLink } from "react-router-dom";
-import "./NavMenu.scss";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
@@ -21,6 +19,7 @@ import avatarImage from "../../images/avatar.jpg";
 import { useGlobalState } from "../GlobalState";
 import { Box, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./NavMenu.scss";
 
 export const NavMenu = () => {
   const { userName } = useGlobalState();
