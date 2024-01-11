@@ -25,6 +25,17 @@
   letter-spacing: -0.14px;
 }
 
+.menu ul > li > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 11px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 8px;
+  width: 96%;
+}
+
 .active {
   background-color: #5932ea;
 }

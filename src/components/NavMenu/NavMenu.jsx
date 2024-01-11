@@ -3,7 +3,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Link from "@mui/material/Link";
 import {
   KeySquareIcon,
   Square3DIcon,
@@ -20,6 +19,7 @@ import { useGlobalState } from "../GlobalState";
 import { Box, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./NavMenu.scss";
+import { NavLink } from "react-router-dom";
 
 export const NavMenu = () => {
   const { userName } = useGlobalState();
@@ -56,20 +56,6 @@ export const NavMenu = () => {
         styleOverrides: {
           root: {
             padding: "0",
-          },
-        },
-      },
-      MuiLink: {
-        styleOverrides: {
-          root: {
-            display: "flex",
-            alignItems: "center",
-            textDecoration: "none",
-            paddingLeft: "11px",
-            paddingTop: "9px",
-            paddingBottom: "9px",
-            borderRadius: "8px",
-            width: "96%",
           },
         },
       },
@@ -146,15 +132,15 @@ export const NavMenu = () => {
         <Box className="menu">
           <List>
             <ListItem>
-              <Link to="/dashboard">
+              <NavLink to="/dashboard">
                 <ListItemIcon>
                   <KeySquareIcon />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link to="/product">
+              <NavLink to="/product">
                 <ListItemIcon>
                   <Square3DIcon />
                 </ListItemIcon>
@@ -162,10 +148,10 @@ export const NavMenu = () => {
                 <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon>
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link to="/customers">
+              <NavLink to="/customers">
                 <ListItemIcon>
                   <UserIcon />
                 </ListItemIcon>
@@ -173,10 +159,10 @@ export const NavMenu = () => {
                 <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon>
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link to="/income">
+              <NavLink to="/income">
                 <ListItemIcon>
                   <WalletIcon />
                 </ListItemIcon>
@@ -184,10 +170,10 @@ export const NavMenu = () => {
                 <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon>
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link to="/promote">
+              <NavLink to="/promote">
                 <ListItemIcon>
                   <DiscountIcon />
                 </ListItemIcon>
@@ -195,10 +181,10 @@ export const NavMenu = () => {
                 <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon>
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link to="/help">
+              <NavLink to="/help">
                 <ListItemIcon>
                   <MessageIcon />
                 </ListItemIcon>
@@ -206,7 +192,7 @@ export const NavMenu = () => {
                 <ListItemIcon>
                   <ArrowIcon />
                 </ListItemIcon>
-              </Link>
+              </NavLink>
             </ListItem>
           </List>
         </Box>
