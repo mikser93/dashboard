@@ -4,8 +4,9 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { SearchIcon } from "../Icons/icons";
 import { rows } from "../../database/customerDatabase";
+import "./Search.scss";
 
-export default function Search({ onSearch }) {
+export const Search = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
@@ -38,14 +39,7 @@ export default function Search({ onSearch }) {
   };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <Box className="search_box" component="form" noValidate autoComplete="off">
       <TextField
         variant="outlined"
         type="search"
@@ -57,29 +51,10 @@ export default function Search({ onSearch }) {
             </InputAdornment>
           ),
         }}
-        sx={{
-          margin: 0,
-          width: 0,
-          "& .MuiOutlinedInput-root": {
-            borderRadius: "10px",
-            "& fieldset": {
-              border: "none",
-            },
-            "& input::placeholder": {
-              textAlign: "left",
-              color: "#B5B7C0",
-              fontFamily: "Poppins",
-              fontSize: "12px",
-            },
-            backgroundColor: "#F9FBFF",
-            width: "216px",
-            height: "38px",
-          },
-        }}
         value={searchTerm}
         onChange={handleChange}
         onKeyPress={handleKeyPress}
       />
     </Box>
   );
-}
+};

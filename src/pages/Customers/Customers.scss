@@ -1,0 +1,37 @@
+.table_head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 34px 0 22px 19px;
+}
+
+.table_name {
+  display: block;
+}
+
+.table_name_main {
+  padding-bottom: 9px;
+}
+
+.table_row {
+  height: 68.5px;
+}
+
+.table_status {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 29px;
+  width: 80px;
+  border-radius: 4px;
+}
+
+.table_footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px 40px 19px;
+}

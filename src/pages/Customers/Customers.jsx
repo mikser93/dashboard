@@ -8,11 +8,12 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Pagination from "@mui/material/Pagination";
 import { rows as customerRows } from "../../database/customerDatabase";
-import Search from "../../components/Search/Search";
+import { Search } from "../../components/Search";
 import { ThemeProvider } from "@mui/material/styles";
 import { Theme } from "../../theme/Theme2";
 import { Layout } from "../../components/Layout";
 import { Box, Typography } from "@mui/material";
+import "./Customers.scss";
 
 export const Customers = () => {
   const itemsPerPage = 8;
@@ -21,7 +22,7 @@ export const Customers = () => {
 
   const handleSearch = (filteredRows) => {
     setFilteredRows(filteredRows);
-    setCurrentPage(1); // При зміні результатів пошуку переходимо на першу сторінку.
+    setCurrentPage(1);
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -32,45 +33,25 @@ export const Customers = () => {
     setCurrentPage(newPage);
   };
 
+  const entriesText = (indexOfFirstItem, indexOfLastItem, filteredRows) => {
+    return `Showing data ${Math.min(
+      indexOfFirstItem + 1,
+      filteredRows.length
+    )} to ${Math.min(indexOfLastItem, filteredRows.length)} of ${
+      filteredRows.length
+    } entries`;
+  };
+
   return (
     <Layout>
       <ThemeProvider theme={Theme}>
         <TableContainer component={Paper}>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              padding: "30px 0 22px 19px",
-            }}
-          >
-            <Box sx={{ display: "block" }}>
-              <Typography
-                sx={{
-                  fontFamily: "Poppins",
-                  fontSize: "22px",
-                  fontStyle: "normal",
-                  fontWeight: "600",
-                  lineHeight: "normal",
-                  letterSpacing: "-0.22px",
-                  paddingBottom: "5px",
-                }}
-              >
+          <Box className="table_head">
+            <Box className="table_name">
+              <Typography className="table_name_main" variant="h2">
                 All Customers
               </Typography>
-              <Typography
-                sx={{
-                  color: "#16c098",
-                  fontFamily: "Poppins",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "normal",
-                  letterSpacing: "-0.14px",
-                }}
-              >
-                Active Members
-              </Typography>
+              <Typography variant="subtitle2">Active Members</Typography>
             </Box>
             <Search onSearch={handleSearch} />
           </Box>
@@ -82,59 +63,42 @@ export const Customers = () => {
                 <TableCell>Phone Number</TableCell>
                 <TableCell>Email</TableCell>
                 <TableCell>Country</TableCell>
-                <TableCell sx={{ paddingLeft: "32px" }}>Status</TableCell>
+                <TableCell className="table_cell_status">Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {currentItems.map((row) => (
-                <TableRow
-                  key={row.customerName}
-                  sx={{
-                    "&:last-child td, &:last-child th": { border: 0 },
-                    height: "68.5px",
-                  }}
-                >
+                <TableRow className="table_row" key={row.customerName}>
                   <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "22px" }}
+                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
                   >
                     {row.customerName}
                   </TableCell>
                   <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "22px" }}
+                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
                   >
                     {row.company}
                   </TableCell>
                   <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "22px" }}
+                    sx={{ paddingBottom: "23px", paddingLeft: "23px" }}
                   >
                     {row.phoneNumber}
                   </TableCell>
                   <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "22px" }}
+                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
                   >
                     {row.email}
                   </TableCell>
                   <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "22px" }}
+                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
                   >
                     {row.country}
                   </TableCell>
                   <TableCell sx={{ paddingBottom: "22px" }}>
                     <Box
+                      className="table_status"
                       variant="outlined"
                       sx={{
-                        fontFamily: "Poppins",
-                        fontSize: "14px",
-                        fontStyle: "normal",
-                        fontWeight: "500",
-                        lineHeight: "normal",
-                        letterSpacing: "-0.14px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: "29px",
-                        width: "80px",
-                        borderRadius: "4px",
                         border:
                           row.status === "Active"
                             ? "1px solid #00B087"
@@ -153,26 +117,9 @@ export const Customers = () => {
               ))}
             </TableBody>
           </Table>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "30px 20px 40px 19px",
-            }}
-          >
-            <Typography
-              sx={{
-                color: "#b5b7c0",
-                fontSize: "14px",
-                fontStyle: "normal",
-                fontWeight: "500",
-                lineHeight: "normal",
-                letterSpacing: "-0.14px",
-              }}
-            >
-              Showing data {Math.min(indexOfFirstItem + 1, filteredRows.length)}{" "}
-              to {Math.min(indexOfLastItem, filteredRows.length)} of{" "}
-              {filteredRows.length} entries
+          <Box className="table_footer">
+            <Typography variant="body2">
+              {entriesText(indexOfFirstItem, indexOfLastItem, filteredRows)}
             </Typography>
             <Pagination
               siblingCount={1}
@@ -181,27 +128,6 @@ export const Customers = () => {
               onChange={handleChangePage}
               variant="outlined"
               shape="rounded"
-              sx={{
-                "& .MuiPaginationItem-root": {
-                  marginRight: "6px",
-                  marginLeft: "6px",
-                  fontSize: "12px",
-                  minWidth: "25px",
-                  height: "24px",
-                  "&:hover": {
-                    background: "#5932EA",
-                    color: "#fff",
-                  },
-                },
-                "& .Mui-selected.MuiPaginationItem-root": {
-                  background: "#5932EA",
-                  color: "#fff",
-                  "&:hover": {
-                    background: "#5932EA",
-                    color: "#fff",
-                  },
-                },
-              }}
             />
           </Box>
         </TableContainer>

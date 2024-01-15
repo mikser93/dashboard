@@ -7,21 +7,25 @@ import { Product } from "../pages/Product";
 import { Income } from "../pages/Income";
 import { Promote } from "../pages/Promote";
 import { Help } from "../pages/Help";
+import { ThemeProvider } from "@mui/material";
+import { Theme } from "../theme/Theme2";
 
 export const App = () => {
   return (
-    <div className="wraper">
-      <NavMenu />
-      <div className="right_menu">
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/income" element={<Income />} />
-          <Route path="/promote" element={<Promote />} />
-          <Route path="/help" element={<Help />} />
-        </Routes>
+    <ThemeProvider theme={Theme}>
+      <div className="wraper">
+        <NavMenu />
+        <div className="right_menu">
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/income" element={<Income />} />
+            <Route path="/promote" element={<Promote />} />
+            <Route path="/help" element={<Help />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
