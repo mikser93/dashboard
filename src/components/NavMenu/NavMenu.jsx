@@ -19,6 +19,14 @@ import {
   HelpIcon,
   ArrowIcon,
 } from "../../images/Icons/icons";
+import {
+  DASHBOARD_LINK_TEXT,
+  PRODUCT_LINK_TEXT,
+  CUSTOMERS_LINK_TEXT,
+  INCOME_LINK_TEXT,
+  PROMOTE_LINK_TEXT,
+  HELP_LINK_TEXT,
+} from "../../constants/links/links";
 
 export const NavMenu = () => {
   const { userName } = useGlobalState();
@@ -43,7 +51,7 @@ export const NavMenu = () => {
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
-              <ListItemText primary="Dashboard" />
+              <ListItemText primary={DASHBOARD_LINK_TEXT} />
             </NavLink>
           </ListItem>
           <ListItem>
@@ -51,7 +59,7 @@ export const NavMenu = () => {
               <ListItemIcon>
                 <ProductIcon />
               </ListItemIcon>
-              <ListItemText primary="Product" />
+              <ListItemText primary={PRODUCT_LINK_TEXT} />
               <ListItemIcon>
                 <ArrowIcon />
               </ListItemIcon>
@@ -62,7 +70,7 @@ export const NavMenu = () => {
               <ListItemIcon>
                 <CustomersIcon />
               </ListItemIcon>
-              <ListItemText primary="Customers" />
+              <ListItemText primary={CUSTOMERS_LINK_TEXT} />
               <ListItemIcon>
                 <ArrowIcon />
               </ListItemIcon>
@@ -73,7 +81,7 @@ export const NavMenu = () => {
               <ListItemIcon>
                 <IncomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Income" />
+              <ListItemText primary={INCOME_LINK_TEXT} />
               <ListItemIcon>
                 <ArrowIcon />
               </ListItemIcon>
@@ -84,7 +92,7 @@ export const NavMenu = () => {
               <ListItemIcon>
                 <PromoteIcon />
               </ListItemIcon>
-              <ListItemText primary="Promote" />
+              <ListItemText primary={PROMOTE_LINK_TEXT} />
               <ListItemIcon>
                 <ArrowIcon />
               </ListItemIcon>
@@ -95,7 +103,7 @@ export const NavMenu = () => {
               <ListItemIcon>
                 <HelpIcon />
               </ListItemIcon>
-              <ListItemText primary="Help" />
+              <ListItemText primary={HELP_LINK_TEXT} />
               <ListItemIcon>
                 <ArrowIcon />
               </ListItemIcon>

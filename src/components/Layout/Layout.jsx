@@ -1,11 +1,12 @@
 import { Greetings } from "../Greetings";
 import { Box } from "@mui/material";
+import "./Layout.scss";
 
 export const Layout = ({ children }) => {
   return (
     <Box>
       <Greetings />
-      <Box sx={{ minWidth: "968px" }}>{children}</Box>
+      <Box className="table_wraper">{children}</Box>
     </Box>
   );
 };

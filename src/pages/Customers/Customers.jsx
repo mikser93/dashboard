@@ -69,46 +69,21 @@ export const Customers = () => {
             <TableBody>
               {currentItems.map((row) => (
                 <TableRow className="table_row" key={row.customerName}>
-                  <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
-                  >
+                  <TableCell className="table_cell">
                     {row.customerName}
                   </TableCell>
-                  <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
-                  >
-                    {row.company}
-                  </TableCell>
-                  <TableCell
-                    sx={{ paddingBottom: "23px", paddingLeft: "23px" }}
-                  >
+                  <TableCell className="table_cell">{row.company}</TableCell>
+                  <TableCell className="table_cell">
                     {row.phoneNumber}
                   </TableCell>
-                  <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
-                  >
-                    {row.email}
-                  </TableCell>
-                  <TableCell
-                    sx={{ paddingBottom: "22px", paddingLeft: "21px" }}
-                  >
-                    {row.country}
-                  </TableCell>
-                  <TableCell sx={{ paddingBottom: "22px" }}>
+                  <TableCell className="table_cell">{row.email}</TableCell>
+                  <TableCell className="table_cell">{row.country}</TableCell>
+                  <TableCell className="table_cell_status">
                     <Box
-                      className="table_status"
+                      className={`table_status ${
+                        row.status === "Active" ? "actives" : "inactives"
+                      }`}
                       variant="outlined"
-                      sx={{
-                        border:
-                          row.status === "Active"
-                            ? "1px solid #00B087"
-                            : "1px solid #DF0404",
-                        background:
-                          row.status === "Active"
-                            ? "rgba(22, 192, 152, 0.38)"
-                            : "#FFC5C5",
-                        color: row.status === "Active" ? "#008767" : "#DF0404",
-                      }}
                     >
                       {row.status}
                     </Box>
