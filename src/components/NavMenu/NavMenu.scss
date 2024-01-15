@@ -1,0 +1,121 @@
+.wraper_main {
+  display: flex;
+  flex-direction: column;
+  min-width: 306px;
+  min-height: 1198px;
+}
+
+.wraper_logo {
+  display: flex;
+  margin-left: 28px;
+  margin-top: 37px;
+  margin-bottom: 53px;
+}
+
+.wraper_logo_text {
+  display: flex;
+  align-items: baseline;
+}
+
+.wraper_logo_text_main {
+  padding-left: 8px;
+}
+
+.wraper_logo_text_caption {
+  padding-left: 4px;
+}
+
+.menu ul > li > a > div:last-child {
+  padding-right: 10px;
+}
+
+.menu ul > li > a:hover {
+  background-color: #5932ea;
+  transition: background-color 0.5s;
+}
+
+.menu ul > li > a:hover span {
+  color: #fff;
+}
+
+.menu ul > li > a:hover path {
+  stroke: white;
+}
+
+.menu ul > li * {
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.14px;
+}
+
+.menu ul > li > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 11px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 8px;
+  width: 96%;
+}
+
+.active {
+  background-color: #5932ea;
+}
+
+.active span {
+  color: #fff;
+}
+
+.active path {
+  stroke: white;
+}
+
+.user {
+  display: flex;
+  margin-left: 28px;
+  margin-bottom: 80px;
+  align-items: center;
+  margin-top: auto;
+}
+
+.user div span {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
+.user div p {
+  color: #757575;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.12px;
+}
+
+.user_name {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+  padding-left: 12px;
+}
+
+.user_name_status {
+  color: #757575;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.12px;
+  display: block;
+}
