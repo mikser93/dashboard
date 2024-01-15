@@ -128,18 +128,10 @@ export const Theme = createTheme({
         },
       },
     },
-    MuiTable: {
-      styleOverrides: {
-        root: {
-          // width: "967px",
-        },
-      },
-    },
     MuiTableCell: {
       styleOverrides: {
         root: {
           paddingLeft: "20px",
-          // paddingBottom: "94px",
         },
       },
     },

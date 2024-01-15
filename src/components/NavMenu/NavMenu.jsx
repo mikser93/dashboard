@@ -3,22 +3,22 @@ import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import {
-  KeySquareIcon,
-  Square3DIcon,
-  UserIcon,
-  WalletIcon,
-  DiscountIcon,
-  MessageIcon,
-  ArrowIcon,
-  LogoIcon,
-} from "../Icons/icons";
 import Avatar from "@mui/material/Avatar";
 import avatarImage from "../../images/avatar.jpg";
 import { useGlobalState } from "../GlobalState";
 import { Box, Typography } from "@mui/material";
 import "./NavMenu.scss";
 import { NavLink } from "react-router-dom";
+import {
+  LogoIcon,
+  DashboardIcon,
+  ProductIcon,
+  CustomersIcon,
+  IncomeIcon,
+  PromoteIcon,
+  HelpIcon,
+  ArrowIcon,
+} from "../../images/Icons/icons";
 
 export const NavMenu = () => {
   const { userName } = useGlobalState();
@@ -41,7 +41,7 @@ export const NavMenu = () => {
           <ListItem>
             <NavLink to="/dashboard">
               <ListItemIcon>
-                <KeySquareIcon />
+                <DashboardIcon />
               </ListItemIcon>
               <ListItemText primary="Dashboard" />
             </NavLink>
@@ -49,7 +49,7 @@ export const NavMenu = () => {
           <ListItem>
             <NavLink to="/product">
               <ListItemIcon>
-                <Square3DIcon />
+                <ProductIcon />
               </ListItemIcon>
               <ListItemText primary="Product" />
               <ListItemIcon>
@@ -60,7 +60,7 @@ export const NavMenu = () => {
           <ListItem>
             <NavLink to="/customers">
               <ListItemIcon>
-                <UserIcon />
+                <CustomersIcon />
               </ListItemIcon>
               <ListItemText primary="Customers" />
               <ListItemIcon>
@@ -71,7 +71,7 @@ export const NavMenu = () => {
           <ListItem>
             <NavLink to="/income">
               <ListItemIcon>
-                <WalletIcon />
+                <IncomeIcon />
               </ListItemIcon>
               <ListItemText primary="Income" />
               <ListItemIcon>
@@ -82,7 +82,7 @@ export const NavMenu = () => {
           <ListItem>
             <NavLink to="/promote">
               <ListItemIcon>
-                <DiscountIcon />
+                <PromoteIcon />
               </ListItemIcon>
               <ListItemText primary="Promote" />
               <ListItemIcon>
@@ -93,7 +93,7 @@ export const NavMenu = () => {
           <ListItem>
             <NavLink to="/help">
               <ListItemIcon>
-                <MessageIcon />
+                <HelpIcon />
               </ListItemIcon>
               <ListItemText primary="Help" />
               <ListItemIcon>

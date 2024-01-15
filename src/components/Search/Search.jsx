@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import { SearchIcon } from "../Icons/icons";
 import { rows } from "../../database/customerDatabase";
+import { SearchIcon } from "../../images/Icons/icons";
 import "./Search.scss";
 
 export const Search = ({ onSearch }) => {
