@@ -26,7 +26,7 @@ import {
   INCOME_LINK_TEXT,
   PROMOTE_LINK_TEXT,
   HELP_LINK_TEXT,
-} from "../../constants/links/links";
+} from "../../constants/links";
 
 export const NavMenu = () => {
   const { userName } = useGlobalState();
